@@ -21,7 +21,7 @@ module YourBestOfSpotify
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    RSpotify.authenticate(Rails.application.credentials[Rails.env.to_sym][:SPOTIFY_CLIENT_ID], Rails.application.credentials[Rails.env.to_sym][:SPOTIFY_CLIENT_SECRET])
+    RSpotify.authenticate(Rails.application.credentials[:spotify_client_id], Rails.application.credentials[:spotify_client_secret])
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
