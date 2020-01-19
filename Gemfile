@@ -55,3 +55,5 @@ gem "rubocop", "~> 0.79.0"
 gem "rubocop-performance", "~> 1.5"
 
 gem "rubocop-rails", "~> 2.4"
+
+gem "rspotify", "~> 2.4"
