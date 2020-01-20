@@ -1,3 +1,21 @@
-<h1>Root#index</h1>
-<p>Find me in app/views/root/index.html.erb</p>
-<%= link_to 'Sign in with Spotify', '/auth/spotify' %>
+<section>
+  <h1>Your Best Of Spotify</h1>
+  <p>
+    Find out your Top 15 artists and tracks of all time.
+  </p>
+  <p>
+    Don't want to login? Use my personal data as a substitue for yours!
+  </p>
+  <div class="link-container">
+    <a href="<%= ApplicationHelper.spotify_auth_url %>">
+      <wired-button elevation="4">
+        Sign in with Spotify
+      </wired-button>
+    </a>
+    <a href="/artists?mocked=true">
+      <wired-button>
+        Use sample data
+      </wired-button>
+    </a>
+  </div>
+</section>

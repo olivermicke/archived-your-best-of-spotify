@@ -1,0 +1,24 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.link-container {
+  display: flex;
+  flex-direction: column;
+
+  a:nth-child(2) {
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .link-container {
+    flex-direction: row;
+
+    a:nth-child(2) {
+      margin-top: 0;
+      margin-left: 32px;
+    }
+  }
+}

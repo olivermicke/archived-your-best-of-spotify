@@ -1,16 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>YourBestOfSpotify</title>
+    <title>Your Best Of Spotify</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script type="module" src="https://cdn.pika.dev/wired-elements/latest"></script>
   </head>
   <body>
-    <%= yield %>
+    <noscript>This app works best with JavaScript enabled.</noscript>
+    <% if ApplicationHelper.is_browser_supported? browser %>
+      <section class="content">
+        <%= yield %>
+      </section>
+    <% else %>
+      <h1>Unsupported browser</h1>
+      <p>
+        Unfortunately, your browser does not support all necessary features to use this app. Please try one of the supported browsers listed below.
+        Thanks for your understanding.
+      </p>
+      <h4>Supported browsers:</h4>
+      <ul>
+        <li>Mozilla Firefox</li>
+        <li>Google Chrome</li>
+        <li>Safari</li>
+      </ul>
+    <% end %>
+    <% if ApplicationHelper.needs_force_re_render? browser %>
+      <%= javascript_pack_tag 'helpers/force-re-render', 'data-turbolinks-track': 'reload' %>
+    <% end %>
+    <%= javascript_pack_tag 'helpers/set-alt-attributes', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

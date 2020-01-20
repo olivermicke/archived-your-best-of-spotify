@@ -57,3 +57,7 @@ gem "rubocop-performance", "~> 1.5"
 gem "rubocop-rails", "~> 2.4"
 
 gem "rspotify", "~> 2.4"
+
+gem "browser", "~> 3.0"
+
+gem "scss_lint", require: false

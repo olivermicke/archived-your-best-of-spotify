@@ -1,3 +1,15 @@
-<h1>YourBestOf#artists</h1>
-<p>Find me in app/views/your_best_of/artists.html.erb</p>
-<%= debug @artists %>
+<% if @uses_mocked_data %>
+  <h1>My All-Time Top 15 Artists</h1>
+<% else %>
+  <h1>Your All-Time Top 15 Artists</h1>
+<% end %>
+<%= render 'header' %>
+<section class="card-deck">
+  <% @artists.each do |artist| %>
+    <% artist_image = artist.images.first %>
+    <wired-card class="card" elevation="3">
+      <wired-image data-artist-name="<%= artist.name %>" elevation="2" src=<%= artist_image["url"] %> width=<%= artist_image["width"] %> height=<%= artist_image["height"] %>></wired-image>
+      <h3><%= artist.name %></h3>
+    </wired-card>
+  <% end %>
+</section>

@@ -1,3 +1,17 @@
-<h1>YourBestOf#tracks</h1>
-<p>Find me in app/views/your_best_of/tracks.html.erb</p>
-<%= debug @tracks %>
+<% if @uses_mocked_data %>
+  <h1>My All-Time Top 15 Tracks</h1>
+<% else %>
+  <h1>Your All-Time Top 15 Tracks</h1>
+<% end %>
+<%= render 'header' %>
+<section class="card-deck">
+  <% @tracks.each do |track| %>
+    <% artist = track.artists.first %>
+    <% artist_image = artist.images.first %>
+    <wired-card class="card track-card" elevation="3">
+      <wired-image data-artist-name="<%= artist.name %>" elevation="2" src=<%= artist_image["url"] %> width=<%= artist_image["width"] %> height=<%= artist_image["height"] %>></wired-image>
+      <h3><%= track.name %></h3>
+      <h4 class="artist-name"><%= artist.name %></h4>
+    </wired-card>
+  <% end %>
+</section>

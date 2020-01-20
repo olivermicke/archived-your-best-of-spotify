@@ -1,0 +1,24 @@
+<header>
+  <nav>
+    <% if request.path == "/artists" %>
+      <a href="/tracks<%= "?mocked=true" if @uses_mocked_data %>">
+        <wired-button>
+          Show Top Tracks
+        </wired-button>
+      </a>
+    <% else %>
+      <a href="/artists<%= "?mocked=true" if @uses_mocked_data %>">
+        <wired-button>
+          Show Top Artists
+        </wired-button>
+      </a>
+    <% end %>
+  </nav>
+  <menu>
+    <% if @uses_mocked_data %>
+      <a href="<%= ApplicationHelper.spotify_auth_url %>"><wired-button>Sign in with Spotify</wired-button></a>
+    <% else %>
+      <a href="<%= request.path %>?mocked=true"><wired-button>Use sample data</wired-button></a>
+    <% end %>
+  </menu>
+</header>
