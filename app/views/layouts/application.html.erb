@@ -4,6 +4,7 @@
     <title>Your Best Of Spotify</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= display_meta_tags site: 'Your Best Of Spotify' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,7 +16,7 @@
         <%= yield %>
       </section>
     <% else %>
-      <h1>Unsupported browser</h1>
+      <h2>Unsupported browser</h2>
       <p>
         Unfortunately, your browser does not support all necessary features to use this app. Please try one of the supported browsers listed below.
         Thanks for your understanding.

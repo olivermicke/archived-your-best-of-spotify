@@ -61,3 +61,5 @@ gem "rspotify", "~> 2.4"
 gem "browser", "~> 3.0"
 
 gem "scss_lint", require: false
+
+gem "meta-tags", "~> 2.13"
