@@ -4223,6 +4223,7 @@ path {
   let Ut = class extends Fe {
     constructor() {
       super(),
+        (this.alt = ''),
         (this.elevation = 1),
         (this.src =
           'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='),
@@ -4255,7 +4256,7 @@ path {
     }
     render() {
       return E`
-    <img src="${this.src}" loading="lazy">
+    <img alt="${this.alt}" loading="lazy" src="${this.src}">
     <div id="overlay"><svg></svg></div>
     `;
     }
@@ -4323,11 +4324,17 @@ path {
     }
   };
   Ht(
-    [re({ type: Number }), Vt('design:type', Object)],
+    [re({ type: String }), Vt('design:type', String)],
     Ut.prototype,
-    'elevation',
+    'alt',
     void 0
   ),
+    Ht(
+      [re({ type: Number }), Vt('design:type', Object)],
+      Ut.prototype,
+      'elevation',
+      void 0
+    ),
     Ht(
       [re({ type: String }), Vt('design:type', String)],
       Ut.prototype,

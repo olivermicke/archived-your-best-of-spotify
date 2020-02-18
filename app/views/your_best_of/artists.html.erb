@@ -8,7 +8,13 @@
   <% @artists.each do |artist| %>
     <% artist_image = artist.images.first %>
     <wired-card class="card" elevation="3">
-      <wired-image data-artist-name="<%= artist.name %>" elevation="2" src=<%= artist_image["url"] %> width=<%= artist_image["width"] %> height=<%= artist_image["height"] %>></wired-image>
+      <wired-image
+        alt="album cover of <%= artist.name %>"
+        elevation="2"
+        height=<%= artist_image["height"] %>
+        src=<%= artist_image["url"] %>
+        width=<%= artist_image["width"] %>
+      ></wired-image>
       <h3><%= artist.name %></h3>
     </wired-card>
   <% end %>
