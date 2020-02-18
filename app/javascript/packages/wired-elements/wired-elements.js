@@ -4255,7 +4255,7 @@ path {
     }
     render() {
       return E`
-    <img src="${this.src}">
+    <img src="${this.src}" loading="lazy">
     <div id="overlay"><svg></svg></div>
     `;
     }
