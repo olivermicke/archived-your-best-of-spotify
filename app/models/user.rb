@@ -2,7 +2,7 @@
 
 require "mocked_data"
 
-LIMIT = 15
+LIMIT = 50
 TIME_RANGE = "long_term"
 
 class User
