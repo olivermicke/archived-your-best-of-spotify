@@ -8,13 +8,12 @@
   flex-direction: column;
 
   a:nth-child(2) {
-    margin-top: 16px;
+    margin-top: 32px;
   }
-}
 
-@media only screen and (min-width: 768px) {
-  .link-container {
+  @media only screen and (min-width: 768px) {
     flex-direction: row;
+    align-items: center;
 
     a:nth-child(2) {
       margin-top: 0;
