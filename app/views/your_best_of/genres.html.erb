@@ -11,7 +11,7 @@
 </ol>
 <div id="chart"></div>
 <script>
-  const genres = <%= raw @genres.to_json %>;
+  var genres = <%= raw @genres.to_json %>;
   
   new roughViz.Donut(
     {
