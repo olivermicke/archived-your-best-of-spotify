@@ -1,3 +1,4 @@
+# typed: false
 # frozen_string_literal: true
 
 require "mocked_data"
@@ -24,6 +25,7 @@ class User
     end
 
     private
+
     def user(spotify_user_hash)
       RSpotify::User.new spotify_user_hash
     end

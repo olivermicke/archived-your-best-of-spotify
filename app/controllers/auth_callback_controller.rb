@@ -1,8 +1,13 @@
+# typed: false
 # frozen_string_literal: true
 
 DEFAULT_REDIRECT_PATH = "/artists"
 
 class AuthCallbackController < ApplicationController
+  extend T::Sig
+
+
+  sig {void}
   def spotify
     user = RSpotify::User.new(request.env["omniauth.auth"])
     session[:spotify_user_hash] = user.to_hash
