@@ -1,7 +1,0 @@
-linters:
-  Comment:
-    enabled: false
-
-  PropertySortOrder:
-    enabled: true
-    order: 'concentric'
