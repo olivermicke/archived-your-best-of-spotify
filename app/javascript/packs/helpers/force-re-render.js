@@ -3,8 +3,8 @@ document.addEventListener('turbolinks:load', () => {
   const forceReRender = () => {
     [
       ...document.querySelectorAll('wired-button'),
-      ...document.querySelectorAll('wired-card')
-    ].forEach(element => {
+      ...document.querySelectorAll('wired-card'),
+    ].forEach((element) => {
       element.requestUpdate();
     });
   };
@@ -16,7 +16,7 @@ document.addEventListener('turbolinks:load', () => {
   requestAnimationFrame(() => {
     forceReRender();
   });
-  [0, 100, 500, 1000].forEach(delay => {
+  [0, 100, 500, 1000].forEach((delay) => {
     setTimeout(() => {
       forceReRender();
     }, delay);
